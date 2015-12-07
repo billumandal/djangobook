@@ -9,6 +9,7 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^hello/$', 'djangobook.views.hello', name='hello'),
     url(r'^time/$', 'djangobook.views.current_datetime', name='datetime'),
+    url(r'^current_datetime/$', 'djangobook.views.current_datetime', name='current_datetime'),
     url(r'^time/plus/(\d{1,2})/$', 'djangobook.views.hours_ahead', name='hours_ahead'),
 	url(r'^time/minus/(\d{1,2})/$', 'djangobook.views.hours_behind', name='hours_behind'),
 )
