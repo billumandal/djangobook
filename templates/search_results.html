@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Search results for {{ query }}{% endblock %}
+
+{% block content %}
+	<p>You searched for <strong>{{ query }}</strong></p>
+	{% if books %}
+		<p>Found {{ books | length }} book{{ books | pluralize }}. </p>
+		<ul>
+			{% for book in books %}
+			<li><strong>{{ book.title }}</strong> by <i>{% for author in book.authors.all %}{{ author }}, {% endfor %}</i>published in the year {{ book.publication_date.year }}</li>
+			{% endfor %}
+		</ul>
+	{% else %}
+		<p>No books matched your search criteria.</p>
+	{% endif %}
+{% endblock %}
+
+{% block footer %}
+	{% include 'search_form.html' %}
+{% endblock %}
