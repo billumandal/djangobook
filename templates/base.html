@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head>{% spaceless %}
     <title>{% block title %}{% endblock %}</title>
+    <style type='text/css'>{% block css %}{% endblock %}</style>
 </head>
 <body>
     {% block header %}<h1>My site</h1>{% endblock %}
@@ -10,5 +11,5 @@
     <hr>
     <p>Thanks for visiting my site.</p>
     {% endblock %}
-</body>
+{% endspaceless %}</body>
 </html>

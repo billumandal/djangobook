@@ -96,5 +96,3 @@ def search(request):
 			return render(request, 'search_results.html', {'books': books, 'query': q })
 	
 	return render(request, 'search_form.html', {'errors': errors})
-
-def contact(request):

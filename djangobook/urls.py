@@ -15,4 +15,10 @@ urlpatterns = patterns('',
 	url(r'^search-form/$', 'djangobook.views.search_form', name='search_form'),
     url(r'^search/$', 'djangobook.views.search', name='search'),
 	url(r'^meta/$', 'djangobook.views.display_meta', name='display_meta'),
+    url(r'^quiz/', include('quiz.urls')),
 )
+
+if settings.DEBUG:
+    urlpatterns += patterns('',
+        (r'^debuginfo/$', 'djangobook.views.debug'),
+    )

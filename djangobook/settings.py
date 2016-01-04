@@ -38,6 +38,9 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.staticfiles',
     'books',
+    'quiz',
+    'multichoice',
+    'true_false'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -96,3 +99,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'jon.peetarson@gmail.com'
+EMAIL_HOST_PASSWORD = 'shravani1192004'
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
